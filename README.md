@@ -3,19 +3,22 @@
 A doorway or portal to a new quest or land of adventures!
 
 The aim is to create a collection of classes, objects, structs and/or enums that make putting together
-some gamedev stuff a whole lot faster.
+some gamedev stuff for 2D projects.
 
 Your own moongate getting you to your gameplay faster.
+
+NOTE: THIS IS HEAVILY A WORK IN PROGRESS. PULL REQUESTS WILL DEFINITELY BE LOOKED AT.
 
 ## Development Install
 
 - `git clone git@github.com:erikyuzwa/moongate.git`
 - `cd moongate`
-- Open with Visual Studio 2019 or Visual Studio 2022 Community Editions
+- Open `visualc/moongate.sln` with Visual Studio 2019 or Visual Studio 2022 Community Editions
 
 ## Features
 
-- TODO
+- PC desktop support (*future goal of Mac and Linux builds)
+- Aimed at 2D games
 
 ## Roadmap
 
