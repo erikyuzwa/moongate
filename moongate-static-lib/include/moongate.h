@@ -5,9 +5,10 @@
 
 namespace moongate {
 	class Engine;
+	class World;
 }
 
 #include "Engine.h"
-
+#include "World.h"
 
 #endif
