@@ -20,6 +20,10 @@ NOTE: THIS IS HEAVILY A WORK IN PROGRESS. PULL REQUESTS WILL DEFINITELY BE LOOKE
 - PC desktop support (*future goal of Mac and Linux builds)
 - Aimed at 2D games
 
+## Videos
+
+- [PROJECT MOONGATE - A STATIC LIBRARY FOR GAMEDEV](https://youtu.be/okLXtzp_J8A)
+
 ## Roadmap
 
 - TODO
