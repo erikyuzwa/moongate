@@ -14,7 +14,7 @@ namespace moongate {
 		SDL_Log("World::end");
 	}
 
-	void World::update() {
+	void World::update(std::deque<SDL_Event> queue) {
 
 	}
 

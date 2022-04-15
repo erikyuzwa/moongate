@@ -17,6 +17,8 @@ namespace moongate {
 			void shutdown();
 
 			int setCurrentWorld(World* newWorld);
+			void toggleFullscreen();
+			void captureScreenshot();
 	};
 }
 

@@ -57,7 +57,10 @@ namespace moongate {
 	void Engine::update() {
 		bool quit  = false;
 		SDL_Event event;
+		std::deque<SDL_Event> queue_keys;
 		while (!quit) {
+			queue_keys.clear();
+
 			while (SDL_PollEvent(&event) != 0) {
 				if (event.type == SDL_QUIT) {
 					quit = true;
@@ -68,15 +71,27 @@ namespace moongate {
 						case SDLK_ESCAPE:
 							quit = true;
 						break;
+						case SDLK_F1:
+							SDL_Log("Engine::toggleFullscreen");
+							toggleFullscreen();
+						break;
+						case SDLK_F2:
+							SDL_Log("Engine::captureScreenshot");
+							captureScreenshot();
+						break;
+						default:
+							queue_keys.push_back(event);
+						break;
 					}
 				}
 			}
 
 			if (_currentWorld != NULL) {
-				_currentWorld->update();
+				_currentWorld->update(queue_keys);
 			}
 
-			SDL_SetRenderDrawColor(_renderer, 100, 149, 237, 235);
+			//SDL_SetRenderDrawColor(_renderer, 100, 149, 237, 235);
+			SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
 			SDL_RenderClear(_renderer);
 
 			if (_currentWorld != NULL) {
@@ -87,6 +102,34 @@ namespace moongate {
 
 			SDL_Delay(100);
 		}
+	}
+
+	void Engine::captureScreenshot() {
+		int w = 0;
+		int h = 0;
+		SDL_GetRendererOutputSize(_renderer, &w, &h);
+		
+		time_t rawtime;
+		struct tm timeinfo;
+		time(&rawtime);
+		localtime_s(&timeinfo, &rawtime);
+
+		char buffer[80];
+		strftime(buffer, 80, "screenshot-%Y-%m-%d_%H-%M-%S.bmp", &timeinfo);
+
+		SDL_Surface* sshot = SDL_CreateRGBSurface(0, w, h, 32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
+		SDL_RenderReadPixels(_renderer, NULL, SDL_PIXELFORMAT_ARGB8888, sshot->pixels, sshot->pitch);
+		SDL_SaveBMP(sshot, buffer);
+		SDL_FreeSurface(sshot);
+	}
+
+
+	void Engine::toggleFullscreen() {
+		int flags = SDL_GetWindowFlags(_window);
+		int isFullscreen = (flags & SDL_WINDOW_FULLSCREEN) ? true : false;
+		
+		SDL_SetWindowFullscreen(_window, !isFullscreen);
+		SDL_SetWindowInputFocus(_window);
 	}
 
 	int Engine::setCurrentWorld(World* newWorld) {
