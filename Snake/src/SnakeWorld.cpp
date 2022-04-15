@@ -5,11 +5,13 @@ SnakeWorld::SnakeWorld() : World() {
 }
 
 void SnakeWorld::begin() {
-	SDL_Log("begin");
+	SDL_Log("SnakeWorld::begin");
+    World::begin();
 }
 
 void SnakeWorld::end() {
-	SDL_Log("end");
+	SDL_Log("SnakeWorld::end");
+    World::end();
 }
 
 void SnakeWorld::update() {
