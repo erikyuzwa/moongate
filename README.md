@@ -9,6 +9,8 @@ Your own moongate getting you to your gameplay faster.
 
 NOTE: THIS IS HEAVILY A WORK IN PROGRESS. PULL REQUESTS WILL DEFINITELY BE LOOKED AT.
 
+TODO: Insert neat screenshot here!
+
 ## Development Install
 
 - `git clone git@github.com:erikyuzwa/moongate.git`
@@ -23,7 +25,7 @@ NOTE: THIS IS HEAVILY A WORK IN PROGRESS. PULL REQUESTS WILL DEFINITELY BE LOOKE
 ## Videos
 
 1. [PROJECT MOONGATE - A STATIC LIBRARY FOR GAMEDEV](https://youtu.be/okLXtzp_J8A)
-2. 
+2. [Adding States and Drawing a Rect](https://youtu.be/9A5FCvnYrt8)
 
 ## Roadmap
 
