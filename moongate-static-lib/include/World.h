@@ -10,7 +10,7 @@ namespace moongate {
 			virtual void begin() = 0;
 			virtual void end() = 0;
 
-			virtual void update();
+			virtual void update(std::deque<SDL_Event> queue);
 			virtual void render(SDL_Renderer* renderer);
 	};
 }
