@@ -1,15 +1,17 @@
 # Moongate
 
-A doorway or portal to a new quest or land of adventures!
+![](./screenshot.jpg)
 
-The aim is to create a collection of classes, objects, structs and/or enums that make putting together
+*image courtesy of the [Ultima Codex wiki](https://wiki.ultimacodex.com/wiki/Moongate)*
+
+- A doorway or portal to a new quest or land of adventures!
+
+- The aim is to create a collection of classes, objects, structs and/or enums that make putting together
 some gamedev stuff for 2D projects.
 
-Your own moongate getting you to your gameplay faster.
+- Your own Moongate getting you to your gameplay faster.
 
 NOTE: THIS IS HEAVILY A WORK IN PROGRESS. PULL REQUESTS WILL DEFINITELY BE LOOKED AT.
-
-TODO: Insert neat screenshot here!
 
 ## Development Install
 
@@ -19,7 +21,7 @@ TODO: Insert neat screenshot here!
 
 ## Features
 
-- PC desktop support (*future goal of Mac and Linux builds)
+- PC desktop support (*with future goal of Mac and Linux builds*)
 - Aimed at 2D games
 
 ## Videos
@@ -31,9 +33,10 @@ TODO: Insert neat screenshot here!
 
 - TODO
 
-## Changelog
+## References and Inspiration
 
-- TODO
+- [FlashPunk](http://useflashpunk.net/)
+- [SDL2](https://libsdl.org/)
 
 ## License
 
