@@ -1,4 +1,5 @@
 #include "moongate.h"
+#include "World.h"
 #include "Engine.h"
 #include <iostream>
 
@@ -7,6 +8,7 @@ namespace moongate {
 		SDL_Log("Engine::()");
 		_window = nullptr;
 		_renderer = nullptr;
+		_currentWorld = nullptr;
 	}
 
 	Engine::~Engine() {
@@ -70,14 +72,31 @@ namespace moongate {
 				}
 			}
 
+			if (_currentWorld != NULL) {
+				_currentWorld->update();
+			}
+
 			SDL_SetRenderDrawColor(_renderer, 100, 149, 237, 235);
 			SDL_RenderClear(_renderer);
 
-			// TODO: draw our game world
+			if (_currentWorld != NULL) {
+				_currentWorld->render(_renderer);
+			}
 
 			SDL_RenderPresent(_renderer);
 
 			SDL_Delay(100);
 		}
+	}
+
+	int Engine::setCurrentWorld(World* newWorld) {
+		if (_currentWorld != NULL) {
+			_currentWorld->end();
+		}
+
+		_currentWorld = newWorld;
+		_currentWorld->begin();
+
+		return 1;
 	}
 }

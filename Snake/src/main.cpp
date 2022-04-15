@@ -1,12 +1,6 @@
-
-#include "moongate.h"
 #include <iostream>
-
-class SnakeEngine : public moongate::Engine {
-	public:
-		SnakeEngine() : Engine() {}
-		~SnakeEngine() = default;
-};
+#include "SnakeEngine.h"
+#include "SnakeWorld.h"
 
 
 int main(int argc, char* argv[]) {
@@ -15,6 +9,8 @@ int main(int argc, char* argv[]) {
 	if (engine->startup() < 0) {
 		goto CLEANUP_AND_QUIT;
 	}
+
+	engine->setCurrentWorld(new SnakeWorld());
 
 	engine->update();
 

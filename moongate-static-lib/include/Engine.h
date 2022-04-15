@@ -6,6 +6,8 @@ namespace moongate {
 		protected:
 			SDL_Window* _window;
 			SDL_Renderer* _renderer;
+
+			World* _currentWorld;
 		public:
 			Engine();
 			virtual ~Engine();
@@ -13,6 +15,8 @@ namespace moongate {
 			int startup();
 			void update();
 			void shutdown();
+
+			int setCurrentWorld(World* newWorld);
 	};
 }
 
